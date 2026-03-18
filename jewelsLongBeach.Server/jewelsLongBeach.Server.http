@@ -1,0 +1,6 @@
+@jewelsLongBeach.Server_HostAddress = http://localhost:5215
+
+GET {{jewelsLongBeach.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
