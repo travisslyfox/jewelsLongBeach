@@ -24,9 +24,11 @@ jobs:
 
       - name: Install deps
         run: npm ci
+        working-directory: ./jewelslongbeach.client
 
       - name: Build app
         run: npm run build
+        working-directory: ./jewelslongbeach.client
 
       - name: Configure AWS (OIDC)
         uses: aws-actions/configure-aws-credentials@v2
@@ -38,7 +40,7 @@ jobs:
         run: aws sts get-caller-identity
 
       - name: Deploy to S3
-        run: aws s3 sync ./dist s3://www.jewelslongbeach.com --delete
+        run: aws s3 sync ./jewelslongbeach.client/dist s3://www.jewelslongbeach.com --delete
 
 
 
