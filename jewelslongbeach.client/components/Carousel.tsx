@@ -1,64 +1,71 @@
-import { useState, useEffect } from 'react'
-import CarouselImage from '../src/assets/components/CarouselImage'
+import { useEffect, useRef } from "react";
+import GoLongBeach from '../src/assets/images/Go Long Beach.jfif'
+import EatDrinkBeMary from '../src/assets/images/Eat Drink Be Mary.jfif'
+import JAGC from '../src/assets/images/JAGC.jfif'
+import Pride from '../src/assets/images/Pride.jfif'
+import "../public/css/carousel.css";
 
-interface CarouselItem {
-    id: number,
-    content: string,
-}
+const images= [
+  GoLongBeach,
+  EatDrinkBeMary,
+  JAGC,
+  Pride
+];
 
-interface CarouselState {
-    carouselArray: CarouselItem[]; //data array
-    carouselComponent: CarouselItem[]; //this will be rendered
-}
+const slideHeight = 300;
+const speed = 0.15;
 
-interface CarouselResponse {
-    items: Array<CarouselItem>,
-    status: number
-}
+function Carousel() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const positionRef = useRef(0);
+  const animationRef = useRef<number | null>(null);
+  const carouselImages = [...images, ...images];
 
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
 
+    const loopHeight = images.length * slideHeight;
 
+    const animate = () => {
+      positionRef.current += speed;
 
-function Carousel(){
+      if (positionRef.current >= loopHeight) {
+        positionRef.current -= loopHeight;
+      }
 
-    const [carouselData, setCarouselData] = useState<CarouselState>({ carouselArray: [], carouselComponent: [] });
-    
-    const carouselMapper = (i: CarouselItem) => {
-		return <CarouselImage content={i.content} key={"carouselImage " + i.id} />;
-	};
+      track.style.transform = `translate3d(0, -${positionRef.current}px, 0)`;
 
-
-    const getCarouselImagesSuccess = (r: CarouselResponse) => {
-        setCarouselData((prevState) => {
-            const cd = { ...prevState };
-            cd.carouselArray = r.items;
-            cd.carouselComponent = r.items;
-            return cd;
-        });   
+      animationRef.current = requestAnimationFrame(animate);
     };
 
+    animationRef.current = requestAnimationFrame(animate);
 
-    useEffect(() => {
-        getCarouselImagesSuccess({
-            items: [
-                { id: 1, content: 'image1.jpg' },
-                { id: 2, content: 'image2.jpg' }
-            ],
-            status: 200
-        });
-    }, []);
+    return () => {
+      if (animationRef.current !== null) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, []);
 
 
-
-    return (
-        <>
-            <div>
-                {carouselData.carouselComponent.map(carouselMapper)}
+  return (
+    <div className="page">
+      <div className="carousel">
+        <div ref={trackRef} className="carouselTrack">
+          {carouselImages.map((src, index) => (
+            <div className="carouselItem" key={`${src}-${index}`}>
+              <img
+                src={src}
+                alt=""
+                draggable={false}
+              />
             </div>
-        </>
-    )
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
 
-
-
-export default Carousel
+export default Carousel;

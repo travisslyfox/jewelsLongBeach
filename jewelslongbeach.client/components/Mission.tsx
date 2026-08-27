@@ -1,13 +1,9 @@
 import '../public/css/tooplate-style.css'
-import GoLongBeach from '../src/assets/images/Go Long Beach.jfif'
-import EatDrinkBeMary from '../src/assets/images/Eat Drink Be Mary.jfif'
-import JAGC from '../src/assets/images/JAGC.jfif'
-import Pride from '../src/assets/images/Pride.jfif'
+import Carousel from './Carousel'
 
 
 
-
-function About() {
+function Mission() {
     
     return (
         <div className="tm-section tm-section-pad tm-bg-gray" id="tm-section-4">
@@ -24,43 +20,18 @@ function About() {
                         
                         <div className="col-sm-12 col-md-12 col-lg-4 col-xl-4 tm-recommended-container">
                             <div className="tm-bg-white">
-                                <div className="tm-bg-primary tm-sidebar-pad">
+                            <div className="tm-bg-primary tm-sidebar-pad" style={{ maxHeight: "1000px"}}>
                                     <h3 className="tm-color-white tm-sidebar-title">More JEWELS</h3>
-                                    <p className="tm-color-white tm-margin-b-0 tm-font-light">Refactore to carousel and height to text</p>
-                                </div>
-                                <div className="tm-sidebar-pad-2 carousel">
-                                        <div className='carousel-slide'>
-                                            <a href="#" className="media tm-media tm-recommended-item">
-                                                <img src={GoLongBeach} style={{ width: '100%', maxHeight: '300px'}} alt="Image"/>                                     
-                                            </a>
-                                            <a href="#" className="media tm-media tm-recommended-item">
-                                                <img src={EatDrinkBeMary} style={{ width: '100%', maxHeight: '300px'}} alt="Image"/>
-                                            </a>
-                                            <a href="#" className="media tm-media tm-recommended-item">
-                                                <img src={JAGC} style={{ width: '100%', maxHeight: '300px'}} alt="Image"/>
-                                            </a>
-                                            <a href="#" className="media tm-media tm-recommended-item">
-                                                <img src={Pride} style={{ width: '100%', maxHeight: '300px'}} alt="Image"/>
-                                    </a>
-                                                                                <a href="#" className="media tm-media tm-recommended-item">
-                                                <img src={GoLongBeach} style={{ width: '100%', maxHeight: '300px'}} alt="Image"/>                                     
-                                    </a>
-                                                                                <a href="#" className="media tm-media tm-recommended-item">
-                                                <img src={GoLongBeach} style={{ width: '100%', maxHeight: '300px'}} alt="Image"/>                                     
-                                    </a>
-                                                                                <a href="#" className="media tm-media tm-recommended-item">
-                                                <img src={GoLongBeach} style={{ width: '100%', maxHeight: '300px'}} alt="Image"/>                                     
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>                            
+                                    <Carousel/>
+                                </div>         
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     )
 }
 
 
 
-export default About;
+export default Mission;

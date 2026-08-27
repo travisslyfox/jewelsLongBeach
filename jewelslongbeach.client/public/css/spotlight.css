@@ -1,0 +1,15 @@
+.cursor-spotlight {
+	position: fixed;
+	inset: 0;
+	z-index: 9999;
+	pointer-events: none;
+
+	background: radial-gradient(
+		500px circle at var(--cursor-x) var(--cursor-y),
+		rgba(255, 255, 255, 0.1),
+		rgba(255, 255, 255, 0.04) 20%,
+		transparent 50%
+	);
+
+	mix-blend-mode: screen;
+}

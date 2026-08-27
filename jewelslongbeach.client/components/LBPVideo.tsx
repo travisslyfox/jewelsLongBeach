@@ -1,4 +1,4 @@
-import '../../../public/css/tooplate-style.css'
+import '../public/css/tooplate-style.css'
 
 
 function LBPVideo() {
@@ -9,7 +9,7 @@ function LBPVideo() {
                 <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed?v=p_p5kTSPJKY"
+                    src="http://www.youtube.com/embed/p_p5kTSPJKY"
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -18,7 +18,7 @@ function LBPVideo() {
             </div>
         </div>   
     )
-}
+} 
 
 
 export default LBPVideo;

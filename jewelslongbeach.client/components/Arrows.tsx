@@ -1,4 +1,4 @@
-import '../../../public/css/tooplate-style.css'
+import '../public/css/tooplate-style.css'
 
 
 
