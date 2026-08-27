@@ -196,7 +196,8 @@ p {
 	font-weight: 700;
 	/* font-family: blah; */
 }
-.navbar a {
+.navbar a,
+.nav-link a {
 	color: white;
 	border: black 1px;
 }
@@ -234,6 +235,9 @@ p {
 
 .nav-link {
 	height: 100%;
+	color: white;
+	background: #bd17af;
+	background-color: #bd17af;
 }
 
 .nav-link,

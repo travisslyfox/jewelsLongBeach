@@ -1,4 +1,4 @@
-import Arrows from '../src/assets/components/Arrows'
+import Arrows from './Arrows'
 import InstagramIcon from '../src/assets/images/InstagramIcon.png'
 import XIcon from '../src/assets/images/XIcon.png'
 import FacebookIcon from '../src/assets/images/FacebookIcon.png'

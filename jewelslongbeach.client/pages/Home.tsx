@@ -1,16 +1,14 @@
+import Dragula from '../src/assets/images/Dragula.jfif'
+import Mission from '../components/Mission'
+import Follow from '../components/Follow'
+import GlobeIcon from '../src/assets/images/GlobeIcon.svg'
+import MicIcon from '../src/assets/images/MicIcon.png'
+import DiscoIcon from '../src/assets/images/DiscoIcon.png'
 import '../public/css/bootstrap.min.css'
 import '../public/css/datepicker.css'
 import '../public/css/font-awesome.css'
 import '../public/css/font-awesome.min.css'
 import '../public/css/tooplate-style.css'
-import Dragula from '../src/assets/images/Dragula.jfif'
-import About from '../components/About'
-import Follow from '../components/Follow'
-import LBPVideo from '../src/assets/components/LBPVideo'
-import GlobeIcon from '../src/assets/images/GlobeIcon.svg'
-import MicIcon from '../src/assets/images/MicIcon.png'
-import DiscoIcon from '../src/assets/images/DiscoIcon.png'
-
 
 
 
@@ -65,22 +63,20 @@ function Home() {
                                 <img src={MicIcon} className="fa tm-fa-6x fa-plane tm-color-primary tm-margin-b-20" style={{height: "75px", width: "75px"}}></img>
                                 <h3 className="tm-color-primary tm-article-title-1">Community Engagement</h3>
                                 <p>As the Mother of Long Beach, JEWELS is an active member of the Southern California queer cominuty</p>
-                                <a href="#tm-section-4" className="text-uppercase tm-color-primary tm-font-semibold">Learn More</a>                            
+                                <a href="/about" className="text-uppercase tm-color-primary tm-font-semibold">Learn More</a>                            
                             </article>
                             <article className="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">                           
                                 <img src={DiscoIcon} className="fa tm-fa-6x fa-life-saver tm-color-primary tm-margin-b-20" style={{height: "75px", width: "75px"}}></img>
                                 <h3 className="tm-color-primary tm-article-title-1">Private Bookings</h3>
                                 <p>JEWELS' Productions is avaible for your next fabulous engagement or event</p>
-                                <a href="#tm-section-4" className="text-uppercase tm-color-primary tm-font-semibold">Learn More</a>                           
+                                <a href="/contact" className="text-uppercase tm-color-primary tm-font-semibold">Learn More</a>                           
                             </article>
                         </div>        
                     </div>
                 </div>
-                
-                <About/>  
-                
-                <LBPVideo/>
-                
+                                
+                <Mission />
+                                
                 <Follow />
 
 
