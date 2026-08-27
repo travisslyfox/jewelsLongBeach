@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Dragula from '../src/assets/images/Dragula.jfif'
 import Mission from '../components/Mission'
 import Follow from '../components/Follow'
@@ -63,13 +64,13 @@ function Home() {
                                 <img src={MicIcon} className="fa tm-fa-6x fa-plane tm-color-primary tm-margin-b-20" style={{height: "75px", width: "75px"}}></img>
                                 <h3 className="tm-color-primary tm-article-title-1">Community Engagement</h3>
                                 <p>As the Mother of Long Beach, JEWELS is an active member of the Southern California queer cominuty</p>
-                                <a href="/about" className="text-uppercase tm-color-primary tm-font-semibold">Learn More</a>                            
+                                <Link to="/about" className="text-uppercase tm-color-primary tm-font-semibold">Learn More</Link>                            
                             </article>
                             <article className="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">                           
                                 <img src={DiscoIcon} className="fa tm-fa-6x fa-life-saver tm-color-primary tm-margin-b-20" style={{height: "75px", width: "75px"}}></img>
                                 <h3 className="tm-color-primary tm-article-title-1">Private Bookings</h3>
                                 <p>JEWELS' Productions is avaible for your next fabulous engagement or event</p>
-                                <a href="/contact" className="text-uppercase tm-color-primary tm-font-semibold">Learn More</a>                           
+                                <Link to="/contact" className="text-uppercase tm-color-primary tm-font-semibold">Learn More</Link>                           
                             </article>
                         </div>        
                     </div>
