@@ -1,0 +1,49 @@
+name: Deploy (OIDC)
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install deps
+        run: npm ci
+        working-directory: ./jewelslongbeach.client
+
+      - name: Build app
+        run: npm run build
+        working-directory: ./jewelslongbeach.client
+
+      - name: Configure AWS (OIDC)
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::019621594617:role/github-jewels-s3-full-access 
+          aws-region: us-west-1
+
+      - name: Test identity
+        run: aws sts get-caller-identity
+
+      - name: Deploy to S3
+        run: aws s3 sync ./jewelslongbeach.client/dist s3://www.jewelslongbeach.com --delete
+
+
+
+
+
+
