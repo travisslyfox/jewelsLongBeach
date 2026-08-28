@@ -42,7 +42,7 @@ function Home() {
                             <div className="col text-center">
                                 <h2 className="tm-section-title">JEWELS Long Beach</h2>
                                 <p className="tm-color-white tm-section-subtitle">Life of the Party</p>
-                                <a href="/contact" className="tm-color-white tm-btn-white-bordered">See her Live</a>
+                                <Link to="/contact" className="tm-color-white tm-btn-white-bordered">See her Live</Link>
                             </div>                
                         </div>
                     </div>        
