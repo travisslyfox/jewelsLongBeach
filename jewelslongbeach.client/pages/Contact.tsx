@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
 import emailjs from '@emailjs/browser';
 
 function Contact() {
@@ -11,6 +12,7 @@ function Contact() {
         companyName: '',
         userRequest: ''
     });
+    const [modal, updateModal] =useState(0)
 
     const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -23,7 +25,13 @@ function Contact() {
     function handleSubmit(e: React.SubmitEvent<HTMLFormElement>){
         e.preventDefault();
         console.log(formData);
-        emailjs.send("service_9n1ix2x","template_z8sbk9n", formData, 'IK85_bjVJpYlgI_a-');
+        emailjs.send("service_9n1ix2x", "template_z8sbk9n", formData, 'IK85_bjVJpYlgI_a-')
+            .then(
+                () => {
+                    updateModal(1); 
+                }
+            );
+
         updateFormData((prevState)=> {
             const fd = { ...prevState }
             fd.email = '';
@@ -36,11 +44,23 @@ function Contact() {
 
     return (
         <>
+            {modal ? <div className="modal show" style={{ display: 'block', position: 'initial' }}>
+                <Modal.Dialog style={{textAlign: 'center'}}> 
+                    <Modal.Header>
+                        <Modal.Title>Thank You</Modal.Title>
+                    </Modal.Header>
+
+                    <Modal.Body>
+                        <p>Thank you for reaching out to JEWELS! We will be in touch soon</p>
+                    </Modal.Body>
+                </Modal.Dialog>
+            </div> : <div></div>}
+
             <Form onSubmit={handleSubmit} style={{ maxWidth: "100%"}}>
                                     
                 <Form.Group className="mb-3" controlId="emailCId">
                     <Form.Label style={{color: 'white'}}>Please provide your prefered contact email</Form.Label>
-                    <Form.Control value={formData.email} placeholder="Email" name='email' onChange={handleFormChange}/>
+                    <Form.Control value={formData.email} placeholder="Email" name='email' type='email' onChange={handleFormChange} required/>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="userNameCId" style={{paddingTop: '1.5rem'}}>
