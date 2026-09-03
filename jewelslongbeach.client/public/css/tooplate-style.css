@@ -445,6 +445,7 @@ select.tm-select::-ms-expand {
 }
 
 .tm-section-title-2 {
+	color: dimgray;
 	font-size: 3.2rem;
 	font-weight: 600;
 }

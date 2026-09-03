@@ -40,9 +40,9 @@ function Home() {
                     <div className="container">
                         <div className="row">
                             <div className="col text-center">
-                                <h2 className="tm-section-title">JEWELS Long Beach</h2>
-                                <p className="tm-color-white tm-section-subtitle">Life of the Party</p>
-                                <Link to="/contact" className="tm-color-white tm-btn-white-bordered">See her Live</Link>
+                                <h2 className="tm-section-title">Jewels Long Beach</h2>
+                                <p className="tm-color-white tm-section-subtitle">Philanthropist, Host, Drag Icon</p>
+                                <Link to="/contact" className="tm-color-white tm-btn-white-bordered">Contact Jewels</Link>
                             </div>                
                         </div>
                     </div>        
