@@ -1,6 +1,7 @@
 // import { useState } from 'react'
 import {  Route, Routes } from 'react-router-dom'
 import Navbar from '../components/Navbar'
+import MobileNavbar from '../components/MobileNavbar'
 import Footer from '../components/Footer'
 import Home from '../pages/Home'
 import Contact from '../pages/Contact'
@@ -17,6 +18,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <MobileNavbar />
       
       <div style={{ backgroundColor: '#0f0f0f', maxWidth: '100%'}}>
           <Routes>
