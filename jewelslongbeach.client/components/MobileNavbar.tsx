@@ -1,5 +1,5 @@
-
 import { useState } from "react";
+import { Link } from "react-router-dom"
 import "../public/css/mobile-navbar.css";
 
 function MobileNavbar() {
@@ -25,9 +25,9 @@ function MobileNavbar() {
         aria-hidden={!isOpen}
         inert={!isOpen}
       >
-        <a href="/" onClick={() => setIsOpen(false)}>Home</a>
-        <a href="/about" onClick={() => setIsOpen(false)}>About</a>
-        <a href="/contact" onClick={() => setIsOpen(false)}>Contact</a>
+            <Link to="" onClick={() => setIsOpen(false)}>HOME </Link>
+            <Link to="/about" onClick={() => setIsOpen(false)}>ABOUT</Link>
+            <Link to="/contact" onClick={() => setIsOpen(false)}>CONTACT</Link>
       </div>
     </nav>
   );
